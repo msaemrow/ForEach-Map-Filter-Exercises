@@ -28,8 +28,8 @@ function onlyEvenValues(arr){
         if(val % 2 === 0){
             evenArr.push(val);
         };
-        return evenArr;
     });   
+    return evenArr;
 }
 
 /*
@@ -77,14 +77,14 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-   const vowelObj = {a: 0, e:0, i:0, o:0, u:0};
+   const vowelObj = {};
    let letterArr = str.split('');
    let vowels = 'aeiou';
 
    letterArr.forEach(function(letter){
     let lowerCase = letter.toLowerCase();
     if(vowels.indexOf(lowerCase) !== -1){
-        if(vowelObj[lowerCase] !== 0){
+        if(vowelObj[lowerCase]){
             vowelObj[lowerCase] ++;
         } else{
             vowelObj[lowerCase] = 1;
@@ -157,7 +157,7 @@ Examples:
 */
 
 function filterByValue(arr, key) {
-    arr.filter(function(val){
+    return arr.filter(function(val){
         return val[key] !== undefined;
     });
 }
